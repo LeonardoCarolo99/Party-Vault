@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A home for your next campaign. Choose your place at the table."
+    />
+    <meta name="theme-color" content="#17140f" />
+    <title>Party Vault — The campaign begins at the table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#home" aria-label="Party Vault home">
+          <span class="wordmark-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 3.8 35.2 12.6v14.8L20 36.2 4.8 27.4V12.6L20 3.8Z" />
+              <path d="m20 3.8 8.3 13.4L20 36.2l-8.3-19L20 3.8Z" />
+              <path d="m4.8 12.6 23.5 4.6m6.9-4.6-23.5 4.6m11.8 0v19" />
+            </svg>
+          </span>
+          <span class="wordmark-type">PARTY<span>VAULT</span></span>
+        </a>
+        <div class="topbar-actions">
+          <div class="topbar-note"><span class="status-dot"></span> THE GUILD IS OPEN <span class="topbar-divider">✦</span> EST. IN EVERY AGE</div>
+          <button class="friends-button" id="friends-open" type="button" aria-label="Friends and messages" aria-haspopup="dialog" aria-controls="friends-dialog">
+            <span aria-hidden="true">♧</span>
+            <span>FRIENDS</span>
+          </button>
+          <button class="settings-button" id="settings-open" type="button" aria-haspopup="dialog" aria-controls="settings-dialog" aria-label="Open settings">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Z" />
+              <path d="m19.4 15 .1.1a1.8 1.8 0 0 1-2.55 2.55l-.1-.1a1.8 1.8 0 0 0-3.06 1.27v.28a1.8 1.8 0 0 1-3.6 0v-.15a1.8 1.8 0 0 0-3.07-1.27l-.1.1a1.8 1.8 0 0 1-2.55-2.55l.1-.1A1.8 1.8 0 0 0 3.3 12.1h-.15a1.8 1.8 0 0 1 0-3.6h.15a1.8 1.8 0 0 0 1.27-3.07l-.1-.1a1.8 1.8 0 0 1 2.55-2.55l.1.1A1.8 1.8 0 0 0 10.2 1.6v-.15a1.8 1.8 0 0 1 3.6 0v.15a1.8 1.8 0 0 0 3.07 1.27l.1-.1a1.8 1.8 0 0 1 2.55 2.55l-.1.1a1.8 1.8 0 0 0 1.27 3.07h.15a1.8 1.8 0 0 1 0 3.6h-.15A1.8 1.8 0 0 0 19.4 15Z" transform="translate(1.2 1.2) scale(.9)" />
+            </svg>
+            <span>SETTINGS</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="app" tabindex="-1"></main>
+
+      <dialog class="friends-dialog" id="friends-dialog" aria-labelledby="friends-title">
+        <div class="friends-panel">
+          <header class="friends-heading">
+            <div>
+              <p class="settings-eyebrow">✧ &nbsp; THE FELLOWSHIP &nbsp; ✧</p>
+              <h2 id="friends-title">Friends &amp; messages</h2>
+            </div>
+            <button class="settings-close" id="friends-close" type="button" aria-label="Close friends">×</button>
+          </header>
+          <p class="friends-notice">Prototype only — contacts and message drafts are saved in this browser. Nothing is sent to another player. Online accounts will be needed for real messaging.</p>
+          <div id="friends-content"></div>
+        </div>
+      </dialog>
+
+      <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+        <div class="settings-panel">
+          <header class="settings-heading">
+            <div>
+              <p class="settings-eyebrow">✧ &nbsp; THE GUILD ARCHIVES &nbsp; ✧</p>
+              <h2 id="settings-title">Settings</h2>
+            </div>
+            <button class="settings-close" id="settings-close" type="button" aria-label="Close settings">×</button>
+          </header>
+          <div class="settings-tabs" role="tablist" aria-label="Settings sections">
+            <button class="settings-tab" id="account-tab" type="button" role="tab" aria-selected="true" aria-controls="account-panel" tabindex="0">Account</button>
+            <button class="settings-tab" id="options-tab" type="button" role="tab" aria-selected="false" aria-controls="options-panel" tabindex="-1">Options</button>
+          </div>
+          <section class="settings-content" id="account-panel" role="tabpanel" aria-labelledby="account-tab">
+            <p class="settings-section-label">YOUR ACCOUNT</p>
+            <h3>Your place at the table</h3>
+            <p>Account details and profile settings will live here.</p>
+          </section>
+          <section class="settings-content" id="options-panel" role="tabpanel" aria-labelledby="options-tab" hidden>
+            <p class="settings-section-label">YOUR PREFERENCES</p>
+            <h3>Make the vault your own</h3>
+            <p>Display and experience options will live here.</p>
+          </section>
+        </div>
+      </dialog>
+
+      <footer class="footer">
+        <span>KEEPER OF WORLDS &nbsp;·&nbsp; FRIEND OF ADVENTURERS</span>
+        <span class="footer-mark">✧ &nbsp; MAY YOUR DICE ROLL TRUE &nbsp; ✧</span>
+      </footer>
+    </div>
+  </body>
+</html>
